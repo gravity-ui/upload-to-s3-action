@@ -23,9 +23,7 @@ inputs:
     required: true
   region:
     description: AWS region (default: ru-central1)
-    required: false
-    default: ru-central1
-
+    required: true
 
 runs:
   using: composite

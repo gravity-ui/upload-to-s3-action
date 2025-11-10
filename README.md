@@ -14,8 +14,7 @@ This action provides a flexible way to upload files or directories to any S3-com
 - `endpoint-url` (required) - S3 endpoint URL (e.g., `https://storage.yandexcloud.net` for Yandex Cloud, `https://s3.amazonaws.com` for AWS).
 - `s3-key-id` (required) - S3 access key ID.
 - `s3-secret-key` (required) - S3 secret access key.
-- `region` (optional) - AWS region. Default: `ru-central1`.
-- `recursive` (optional) - Recursively upload directories. Default: `true`.
+- `region` (required) - AWS region. Default: `ru-central1`.
 
 ## Usage Example
 
@@ -32,38 +31,3 @@ This action provides a flexible way to upload files or directories to any S3-com
     region: ru-central1
     recursive: true
 ```
-
-## Example with AWS S3
-
-```yaml
-- name: Upload to AWS S3
-  uses: ./upload-to-s3-action
-  with:
-    src-path: ./dist
-    dest-path: /releases/latest
-    bucket: my-aws-bucket
-    endpoint-url: https://s3.amazonaws.com
-    s3-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-    s3-secret-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-    region: us-east-1
-```
-
-## Example with Yandex Cloud
-
-```yaml
-- name: Upload to Yandex Cloud
-  uses: ./upload-to-s3-action
-  with:
-    src-path: ./public
-    dest-path: /static
-    bucket: my-yandex-bucket
-    endpoint-url: https://storage.yandexcloud.net
-    s3-key-id: ${{ secrets.YANDEX_KEY_ID }}
-    s3-secret-key: ${{ secrets.YANDEX_SECRET_KEY }}
-    region: ru-central1
-```
-
-## License
-
-MIT
-
