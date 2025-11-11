@@ -13,7 +13,7 @@ inputs:
     description: S3 bucket name
     required: true
   endpoint-url:
-    description: S3 endpoint URL (e.g., https://storage.yandexcloud.net)
+    description: S3 endpoint URL
     required: true
   s3-key-id:
     description: S3 access key ID
@@ -22,7 +22,7 @@ inputs:
     description: S3 secret access key
     required: true
   region:
-    description: AWS region (default: ru-central1)
+    description: AWS region
     required: true
 
 runs:
